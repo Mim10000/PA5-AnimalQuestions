@@ -18,6 +18,9 @@ public class Game20Q
 	{
 		this.game = game;
 	}
+	/**  
+	 *  Creates a default game with one question
+	 */
 	public HashMap<String, LinkedList<String>> getDefualtGame()
 	{
 		LinkedList <String> n = new LinkedList<String>();
@@ -33,8 +36,9 @@ public class Game20Q
 		
 		return game;
 	}
-	//Adds questions to the game if the player lost
-	
+	/**  
+	 *  Adds questions to the game if the player lost
+	 */
 	public void addQ(String key, LinkedList<String> values, String animal, String clue)
 	{
 		
@@ -64,6 +68,9 @@ public class Game20Q
 		
 		Log.d("AfterAddingMap", game.toString());
 	}
+	/**  
+	 *  Plays the game, meaning it takes info from what button has been pressed and figures out what to do from there
+	 */
 	public void play(String answer)
 	{		
 			//Continues yes
@@ -82,6 +89,9 @@ public class Game20Q
 			{
 				key = game.get(key).get(1);
 			}	
+	/**  
+	*  Restarts the game, setting the question back to the first one
+    */
 	}
 	public void restart()
 	{
