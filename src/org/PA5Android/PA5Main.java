@@ -1,6 +1,10 @@
 package org.PA5Android;
 
+import org.PA5Android.GameStorage;
+
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +14,8 @@ public class  PA5Main extends Activity {
 		
 /** Called when the activity is first created. */
 
+	//Intent k=new Intent(this , GameStorage.class);
+	static Game20Q g; 
 	static boolean adding=false; //Sees if the game should be adding a question
 @Override
 public void onCreate(Bundle savedInstanceState) 
@@ -68,7 +74,8 @@ public void onClick(View v)
 	
 	if (et.getText().toString().equals("You Lost, play again?") || et.getText().toString().equals("Play again?"))
 	{
-		et.setText("Thank You for Playing!");
+		finish();
+       // startActivity(k);
 	}
 	//Do Nothing when the game is adding a question
 	else if(adding==true)
@@ -91,5 +98,10 @@ public void onClick(View v)
 	}
 }
 });
+}
+
+public static Game20Q getGame()
+{
+	return g;
 }
 }
